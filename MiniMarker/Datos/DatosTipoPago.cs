@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -90,12 +90,87 @@ namespace Datos
                 P_IdTipoPago.SqlDbType = SqlDbType.Int;
                 P_IdTipoPago.Value = tipoPago.Id_tipo_pago;
                 sqlCmd.Parameters.Add(P_IdTipoPago);
+
+                SqlParameter P_TipoPagoNombre = new SqlParameter();
+                P_TipoPagoNombre.ParameterName = "@TIPO_PAGO_NOMBRE";
+                P_TipoPagoNombre.SqlDbType = SqlDbType.VarChar;
+                P_TipoPagoNombre.Size = 15;
+                P_TipoPagoNombre.Value = tipoPago.Tipo_pago_nombre;
+                sqlCmd.Parameters.Add(P_TipoPagoNombre);
+
+                respuesta = sqlCmd.ExecuteNonQuery() == 1 ? "Actulizado con Exito" : "Registro no actualizado";
             }
             catch (Exception e)
             {
 
                 respuesta = e.Message;
             }
+            finally
+            {
+                if (sqlConexion.State == ConnectionState.Open)
+                {
+                    sqlConexion.Close();
+                }
+            }
+
+            return respuesta;
+        }
+
+        public string Eliminar (DatosTipoPago tipoPago)
+        {
+            try
+            {
+                sqlConexion.ConnectionString = Conexion.Conex;
+                sqlConexion.Open();
+                sqlCmd.Connection = sqlConexion;
+                sqlCmd.CommandText = "speliminar_tipoPago";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter P_IdTipoPago = new SqlParameter();
+                P_IdTipoPago.ParameterName = "@ID_TIPO_PAGO";
+                P_IdTipoPago.SqlDbType = SqlDbType.Int;
+                P_IdTipoPago.Value = tipoPago.Id_tipo_pago;
+                sqlCmd.Parameters.Add(P_IdTipoPago);
+
+                respuesta = sqlCmd.ExecuteNonQuery() == 1 ? "Eliminado con exito!" : "Registro no eliminado";
+            }
+            catch (Exception e)
+            {
+
+                respuesta = e.Message;
+            }
+            finally
+            {
+                if (sqlConexion.State == ConnectionState.Open)
+                {
+                    sqlConexion.Close();
+                }
+            }
+
+            return respuesta;
+        }
+
+        public DataTable Listar()
+        {
+            DataTable LisRegistros = new DataTable("TIPO_PAGO");
+
+            try
+            {
+                sqlConexion.ConnectionString = Conexion.Conex;
+                sqlCmd.Connection = sqlConexion;
+                sqlCmd.CommandText = "spmostrar_tipoPago";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter sqlAdapeter = new SqlDataAdapter(sqlCmd);
+                sqlAdapeter.Fill(LisRegistros);
+            }
+            catch (Exception e)
+            {
+
+                LisRegistros = null;
+            }
+
+            return LisRegistros;
         }
     }
 }
