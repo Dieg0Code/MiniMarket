@@ -1,0 +1,9 @@
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\bin\Debug\Logica.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\bin\Debug\Logica.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\bin\Debug\Datos.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\bin\Debug\Datos.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\obj\Debug\Logica.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\Logica\obj\Debug\Logica.pdb

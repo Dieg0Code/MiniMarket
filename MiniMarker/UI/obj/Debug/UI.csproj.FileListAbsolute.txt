@@ -1,0 +1,13 @@
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\UI.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\UI.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\Logica.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\Datos.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\Logica.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\bin\Debug\Datos.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.csproj.AssemblyReference.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.FormCiudad.resources
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.csproj.GenerateResource.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.csproj.CopyComplete
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\UI\obj\Debug\UI.pdb

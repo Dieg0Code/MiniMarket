@@ -1,0 +1,16 @@
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\MiniMarker.exe.config
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\MiniMarker.exe
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\MiniMarker.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\UI.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\Logica.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\Datos.dll
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\UI.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\Logica.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\bin\Debug\Datos.pdb
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\Ventas_MiniMarker.csproj.AssemblyReference.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\MiniMarker.Properties.Resources.resources
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\Ventas_MiniMarker.csproj.GenerateResource.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\Ventas_MiniMarker.csproj.CoreCompileInputs.cache
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\Ventas_MiniMarker.csproj.CopyComplete
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\MiniMarker.exe
+C:\Users\Jorge Guzmán Yáñez\Source\Repos\MiniMarker\MiniMarker\obj\Debug\MiniMarker.pdb
