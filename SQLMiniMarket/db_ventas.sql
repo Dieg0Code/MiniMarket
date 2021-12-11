@@ -167,7 +167,7 @@ if exists (select 1
 go
 
 /*==============================================================*/
-/* Table: CATEGORIA                                             */
+/* Table: CATEGORIA  hecho                                           */
 /*==============================================================*/
 create table CATEGORIA (
    ID_CATEGORIA         int                  not null,
@@ -180,7 +180,7 @@ alter table CATEGORIA
 go
 
 /*==============================================================*/
-/* Table: CIUDAD                                                */
+/* Table: CIUDAD       hecho                                         */
 /*==============================================================*/
 create table CIUDAD (
    ID_CIUDAD            int                  not null,

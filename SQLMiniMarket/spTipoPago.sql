@@ -15,7 +15,7 @@ go
 
 -- Actualizar Tipo Pago
 create proc spactualizar_tipo_pago
-@ID_TIPO_PAGO
+@ID_TIPO_PAGO int,
 @TIPO_PAGO_NOMBRE varchar(15)
 as
 update TIPO_PAGO set TIPO_PAGO_NOMBRE = @TIPO_PAGO_NOMBRE where ID_TIPO_PAGO = @ID_TIPO_PAGO
