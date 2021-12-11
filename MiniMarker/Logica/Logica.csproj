@@ -43,7 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="LogiacaCategoria.cs" />
     <Compile Include="LogicaCiudad.cs" />
+    <Compile Include="LogicaCliente.cs" />
+    <Compile Include="LogicaDetalleVenta.cs" />
+    <Compile Include="LogicaTipoDocumento.cs" />
+    <Compile Include="LogicaTipoPago.cs" />
+    <Compile Include="LogicaUsuario.cs" />
+    <Compile Include="LogicaVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

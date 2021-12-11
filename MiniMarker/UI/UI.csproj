@@ -45,11 +45,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FormCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategoria.Designer.cs">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCiudad.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCiudad.Designer.cs">
       <DependentUpon>FormCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProducto.Designer.cs">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTipoPago.Designer.cs">
+      <DependentUpon>FormTipoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuario.Designer.cs">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenta.Designer.cs">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromCliente.Designer.cs">
+      <DependentUpon>FromCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FromTipoDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FromTipoDocumento.Designer.cs">
+      <DependentUpon>FromTipoDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,8 +102,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormCategoria.resx">
+      <DependentUpon>FormCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCiudad.resx">
       <DependentUpon>FormCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProducto.resx">
+      <DependentUpon>FormProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoPago.resx">
+      <DependentUpon>FormTipoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuario.resx">
+      <DependentUpon>FormUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenta.resx">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromCliente.resx">
+      <DependentUpon>FromCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FromTipoDocumento.resx">
+      <DependentUpon>FromTipoDocumento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
