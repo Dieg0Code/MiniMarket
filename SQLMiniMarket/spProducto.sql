@@ -8,18 +8,20 @@ go
 -- Guardar Producto
 create proc spguardar_PRODUCTO
 @ID_PRODUCTO int output,
-@ID_CATEGORIA int output,
+@ID_CATEGORIA int,
 @PRO_CODIGO varchar(10),
 @PRO_NOMBRE varchar(30),
 @PRO_STOCK int,
 @PRO_PRECIO_UNITARIO decimal(19,2)
 as
 insert into PRODUCTO (
+ID_CATEGORIA,
 PRO_CODIGO,
 PRO_NOMBRE,
 PRO_STOCK,
 PRO_PRECIO_UNITARIO
 ) values (
+@ID_CATEGORIA,
 @PRO_CODIGO,
 @PRO_NOMBRE,
 @PRO_STOCK,
@@ -36,7 +38,8 @@ create proc spactualizar_PRODUCTO
 @PRO_STOCK int,
 @PRO_PRECIO_UNITARIO decimal(19,2)
 as
-update PRODUCTO set 
+update PRODUCTO set
+ID_CATEGORIA = @ID_CATEGORIA,
 PRO_CODIGO = @PRO_CODIGO,
 PRO_NOMBRE = @PRO_NOMBRE,
 PRO_STOCK = @PRO_STOCK,
