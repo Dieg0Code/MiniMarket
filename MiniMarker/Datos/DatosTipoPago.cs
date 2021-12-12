@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    class DatosTipoPago
+     public class DatosTipoPago
     {
         private int id_tipo_pago;
         private string tipo_pago_nombre;

@@ -46,6 +46,8 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DatosCategoria.cs" />
     <Compile Include="DatosCiudad.cs" />
+    <Compile Include="DatosCliente.cs" />
+    <Compile Include="DatosTipoDocumento.cs" />
     <Compile Include="DatosTipoPago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
