@@ -84,7 +84,7 @@ namespace Datos
                 SqlParameter P_IdCiudad = new SqlParameter();
                 P_IdCiudad.ParameterName = "ID_CIUDAD";
                 P_IdCiudad.SqlDbType = SqlDbType.Int;
-                //P_IdCiudad.Direction = ParameterDirection.Output;
+                P_IdCiudad.Direction = ParameterDirection.Output;
                 sqlCmd.Parameters.Add(P_IdCiudad);
 
                 SqlParameter P_CliRut = new SqlParameter();
@@ -112,7 +112,9 @@ namespace Datos
                 P_CliFechaNac.ParameterName = "@CLI_FECHA_NAC";
                 P_CliFechaNac.SqlDbType = SqlDbType.DateTime;
                 P_CliFechaNac.Value = cliente.Cli_fecha_nac;
-                // hay que arreglar
+
+
+                
 
 
                 SqlParameter P_CliDireccion = new SqlParameter();
@@ -129,26 +131,27 @@ namespace Datos
                 sqlCmd.Parameters.Add(P_CliTelefono);
 
                 SqlParameter p_cliCorreo = new SqlParameter();
-                p_cliCorreo.parameterName = "@CLI_CORREO";
-                p_cliCorreo.SqlDbType = SqlDbType = SqlDbType.VarChar;
+                p_cliCorreo.ParameterName = "@CLI_CORREO";
+                p_cliCorreo.SqlDbType = SqlDbType.VarChar;
                 p_cliCorreo.Size = 50;
                 p_cliCorreo.Value = cliente.Cli_correo;
                 sqlCmd.Parameters.Add(p_cliCorreo);
 
-                respuesta = sqlCmd.ExecuteteNonQuery() == 1 ?
+                respuesta = sqlCmd.ExecuteNonQuery() == 1 ?
                     "Guardado con exito!!":
                     "Registro no guardado";
 
 
             }
-            catch (Excetion e)
+            catch (Exception e)
             {
 
-                respuesta = e.Message 
+                respuesta = e.Message;
             }
+
             finally
             {
-                if (sqlConexion.state == ConnectionState.Open)
+                if (sqlConexion.State == ConnectionState.Open)
                 {
                     sqlConexion.Close();
                 }
@@ -162,7 +165,7 @@ namespace Datos
             try
             {
                 sqlConexion.ConnectionString = Conexion.Conex;
-                sqlConexion.open();
+                sqlConexion.Open();
                 sqlCmd.Connection = sqlConexion;
                 sqlCmd.CommandText = "spactualizar_cliente";
                 sqlCmd.CommandType = CommandType.StoredProcedure;
@@ -170,23 +173,23 @@ namespace Datos
                 SqlParameter P_IdCliente = new SqlParameter();
                 P_IdCliente.ParameterName = "@ID_CLIENTE";
                 P_IdCliente.SqlDbType = SqlDbType.Int;
-                P_IdCliente.Direction = ParameterDireccion.Output;
+                P_IdCliente.Direction = ParameterDirection.Output;
                 sqlCmd.Parameters.Add(P_IdCliente);
 
                 SqlParameter P_IdCiudad = new SqlParameter();
                 P_IdCiudad.ParameterName = "ID_CIUDAD";
-                P_IdCiudad.SqlDbTyper = SqlDbType.Int;
-                P_IdCiudad.Direccion = ParameterDirection.Output;
-                P_IdCiudad.Parameters.Add(P_IdCiudad);
+                P_IdCiudad.SqlDbType = SqlDbType.Int;
+                P_IdCiudad.Direction = ParameterDirection.Output;
+                sqlCmd.Parameters.Add(P_IdCiudad);
 
-                sqlParameter P_CliRut = new SqlParameter();
+                SqlParameter P_CliRut = new SqlParameter();
                 P_CliRut.ParameterName = "@CLI_RUT";
                 P_CliRut.SqlDbType = SqlDbType.VarChar;
                 P_CliRut.Size = 10;
                 P_CliRut.Value = cliente.Cli_rut;
                 sqlCmd.Parameters.Add(P_CliRut);
 
-                sqlParameter P_CliNombre = new SqlParameter();
+                SqlParameter P_CliNombre = new SqlParameter();
                 P_CliNombre.ParameterName = "@CLI_NOMBRE";
                 P_CliNombre.SqlDbType = SqlDbType.VarChar;
                 P_CliNombre.Size = 30;
@@ -208,7 +211,7 @@ namespace Datos
 
                 SqlParameter P_CliDireccion = new SqlParameter();
                 P_CliDireccion.ParameterName = "@CLI_DIRECCION";
-                P_CliDireccion.SqlDbType = SqlDbType = SqlDbType.VarChar;
+                P_CliDireccion.SqlDbType = SqlDbType.VarChar;
                 P_CliDireccion.Size = 80;
                 P_CliDireccion.Value = cliente.Cli_direccion;
                 sqlCmd.Parameters.Add(P_CliDireccion);
@@ -216,12 +219,12 @@ namespace Datos
                 SqlParameter P_CliTelefono = new SqlParameter();
                 P_CliTelefono.ParameterName = "@CLI_TELEFONO";
                 P_CliTelefono.SqlDbType = SqlDbType.Int;
-                P_CliTelefono.Direccion = ParameterDireccion.Output;
-                sqlCmd.Parameters.add(P_CliTelefono);
+                P_CliTelefono.Direction = ParameterDirection.Output;
+                sqlCmd.Parameters.Add(P_CliTelefono);
 
                 SqlParameter p_cliCorreo = new SqlParameter();
-                p_cliCorreo.parameterName = "@CLI_CORREO";
-                p_cliCorreo.SqlDbType = SqlDbType = SqlDbType.VarChar;
+                p_cliCorreo.ParameterName = "@CLI_CORREO";
+                p_cliCorreo.SqlDbType = SqlDbType.VarChar;
                 p_cliCorreo.Size = 50;
                 p_cliCorreo.Value = cliente.Cli_correo;
                 sqlCmd.Parameters.Add(p_cliCorreo);
@@ -256,13 +259,13 @@ namespace Datos
                 sqlCmd.CommandText = "speliminar_cliente";
                 sqlCmd.CommandType = CommandType.StoredProcedure;
 
-                Sqlparameter p_IdCliente = new Sqlparameter();
+                SqlParameter p_IdCliente = new SqlParameter();
                 p_IdCliente.ParameterName = "@ID_CLIENTE";
                 p_IdCliente.SqlDbType = SqlDbType.Int;
                 p_IdCliente.Value = cliente.Id_cliente;
                 sqlCmd.Parameters.Add(p_IdCliente);
 
-                respuesta = sqlCmd.ExecuteNonQuery() == 1
+                respuesta = sqlCmd.ExecuteNonQuery() == 1?
                     "Eliminado con exito!!": 
                     "Registro no eliminado";
 
@@ -289,10 +292,10 @@ namespace Datos
                 sqlConexion.ConnectionString = Conexion.Conex;
                 sqlCmd.Connection = sqlConexion;
                 sqlCmd.CommandText = "sqmostrar_cliente";
-                sqlCmd.commandType = CommandType.StoredProcedure;
+                sqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter sqlAdapter = new SqlDataAdapter(sqlCmd);
-                sqlAdapter.fill(LisRegistros);
+                sqlAdapter.Fill(LisRegistros);
             }
             catch (Exception e)
             {
