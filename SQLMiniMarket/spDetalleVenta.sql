@@ -1,5 +1,5 @@
 -- mostra detalle venta
-create proc spMostrar_DetalleVenta
+create proc spmostrar_DetalleVenta
 as
 select top 100 * from DETALLE_VENTA
 order by ID_DET_VENTA desc

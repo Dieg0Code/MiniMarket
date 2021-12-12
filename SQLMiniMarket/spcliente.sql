@@ -1,5 +1,5 @@
 --mostrar Cliente
-create proc spMOstrar_Cliente
+create proc spmostrar_Cliente
 as
 select top 100 * from CLIENTE
 order by ID_CLIENTE desc 
