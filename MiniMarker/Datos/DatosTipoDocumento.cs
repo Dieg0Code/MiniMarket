@@ -12,8 +12,10 @@ namespace Datos
     public class DatosTipoDocumento
     {
         private int id_tipoDocumento;
+        private string tipo_doc_nombre;
 
         public int Id_tipoDocumento { get => id_tipoDocumento; set => id_tipoDocumento = value; }
+        public string Tipo_doc_nombre { get => tipo_doc_nombre; set => tipo_doc_nombre = value; }  
 
 
         public DatosTipoDocumento()
@@ -24,6 +26,7 @@ namespace Datos
         public DatosTipoDocumento(int idTipoDocumento)
         {
             this.Id_tipoDocumento = id_tipoDocumento;
+            this.Tipo_doc_nombre = tipo_doc_nombre;
         }
         string respuesta;
 
@@ -42,10 +45,17 @@ namespace Datos
                 sqlcmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter P_IdtipoDocumento = new SqlParameter();
-                P_IdtipoDocumento.ParameterName = "@ID_CIUDAD";
+                P_IdtipoDocumento.ParameterName = "@ID_TIPODOCUMENTO";
                 P_IdtipoDocumento.SqlDbType = SqlDbType.Int;
                 P_IdtipoDocumento.Direction = ParameterDirection.Output;
                 sqlcmd.Parameters.Add(P_IdtipoDocumento);
+                
+                sqlParameter P_tipodocnombre = new Sqlparameter();
+                P_tipodocnombre.ParameterName = "@TIPO_DOC_NOMBRE";
+                P_tipodocnombre.sqlDbType = sqlDbtype.Varchar;
+                P_tipodocnombre.Size = 20;
+                P_tipodocnombre.Value = tipoDocumento.Tipo_doc_nombre;
+                sqlcmd.Parameters.add(P_tipodocnombre);
 
 
                 respuesta = sqlcmd.ExecuteNonQuery() == 1 ?
@@ -80,17 +90,27 @@ namespace Datos
                 SqlParameter P_IdtipoDocumento = new SqlParameter();
                 P_IdtipoDocumento.ParameterName = "@ID_TIPODOCUMENTO";
                 P_IdtipoDocumento.SqlDbType = SqlDbType.Int;
-                P_IdtipoDocumento.Value = tipoDocumento.Id_tipoDocumento;
+                P_IdtipoDocumento.Direction = ParameterDirection.Output;
                 sqlcmd.Parameters.Add(P_IdtipoDocumento);
+
+                sqlParameter P_tipodocnombre = new Sqlparameter();
+                P_tipodocnombre.ParameterName = "@TIPO_DOC_NOMBRE";
+                P_tipodocnombre.sqlDbType = sqlDbtype.Varchar;
+                P_tipodocnombre.Size = 20;
+                P_tipodocnombre.Value = tipoDocumento.Tipo_doc_nombre;
+                sqlcmd.Parameters.add(P_tipodocnombre);
+
+
+                sqlParameter_P
 
                 respuesta = sqlcmd.ExecuteNonQuery() == 1 ?
                     "Actualizar con exito!" :
                     "Resgistro no actualizadp";
             }
-            catch (Exception a)
+            catch (Exception e)
             {
 
-                respuesta = a.Message;
+                respuesta = e.Message;
             }
             finally
             {
@@ -122,9 +142,9 @@ namespace Datos
                     "eliminado con exito!" :
                     "registro no eliminado";
             }
-            catch (Exception a)
+            catch (Exception e)
             {
-                respuesta = a.Message;
+                respuesta = e.Message;
 
             }
             finally
@@ -149,7 +169,7 @@ namespace Datos
                 SqlDataAdapter sqladapter = new SqlDataAdapter(sqlcmd);
                 sqladapter.Fill(LisRegistros);
             }
-            catch (Exception a)
+            catch (Exception e)
             {
 
                 LisRegistros = null;
