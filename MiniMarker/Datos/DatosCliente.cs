@@ -23,7 +23,7 @@ namespace Datos
         private string cli_correo;
 
         public int Id_cliente { get => id_cliente; set => id_cliente = value; }
-        public string Id_categoria { get => id_categoria; set => id_categoria = value; }
+        public int Id_categoria { get => id_categoria; set => id_categoria = value; }
         public string Cli_rut { get => cli_rut; set => cli_rut = value; }
         public string Cli_nombre { get => cli_nombre; set => cli_nombre = value; }
         public string Cli_apellido { get => cli_apellido; set => cli_apellido = value; }
@@ -63,7 +63,7 @@ namespace Datos
 
         SqlConnection sqlConexion = new SqlConnection();
 
-        Sqlcommand sqlCmd = new Sqlcommand();
+        SqlCommand sqlCmd = new SqlCommand();
 
         public string Guardar(DatosCliente cliente)
         {
@@ -72,29 +72,29 @@ namespace Datos
                 sqlConexion.ConnectionString = Conexion.Conex;
                 sqlConexion.Open();
                 sqlCmd.Connection = sqlConexion;
-                sqlCmd.CommantText = "spguardar_cliente";
-                sqlCmd.CommantType = CommandType.StoredProcedure;
+                sqlCmd.CommandText = "spguardar_cliente";
+                sqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter P_IdCliente = new SqlParameter();
                 P_IdCliente.ParameterName = "@ID_CLIENTE";
                 P_IdCliente.SqlDbType = SqlDbType.Int;
-                P_IdCliente.Direction = ParameterDireccion.Output;
+                P_IdCliente.Direction = ParameterDirection.Output;
                 sqlCmd.Parameters.Add(P_IdCliente);
 
                 SqlParameter P_IdCiudad = new SqlParameter();
                 P_IdCiudad.ParameterName = "ID_CIUDAD";
-                P_IdCiudad.SqlDbTyper = SqlDbType.Int;
-                P_IdCiudad.Direccion = ParameterDirection.Output;
-                P_IdCiudad.Parameters.Add(P_IdCiudad);
+                P_IdCiudad.SqlDbType = SqlDbType.Int;
+                //P_IdCiudad.Direction = ParameterDirection.Output;
+                sqlCmd.Parameters.Add(P_IdCiudad);
 
-                sqlParameter P_CliRut = new SqlParameter();
+                SqlParameter P_CliRut = new SqlParameter();
                 P_CliRut.ParameterName = "@CLI_RUT";
                 P_CliRut.SqlDbType = SqlDbType.VarChar;
                 P_CliRut.Size = 10;
                 P_CliRut.Value = cliente.Cli_rut;
                 sqlCmd.Parameters.Add(P_CliRut);
 
-                sqlParameter P_CliNombre = new SqlParameter();
+                SqlParameter P_CliNombre = new SqlParameter();
                 P_CliNombre.ParameterName = "@CLI_NOMBRE";
                 P_CliNombre.SqlDbType = SqlDbType.VarChar;
                 P_CliNombre.Size = 30;
@@ -111,12 +111,13 @@ namespace Datos
                 SqlParameter P_CliFechaNac = new SqlParameter();
                 P_CliFechaNac.ParameterName = "@CLI_FECHA_NAC";
                 P_CliFechaNac.SqlDbType = SqlDbType.DateTime;
+                P_CliFechaNac.Value = cliente.Cli_fecha_nac;
                 // hay que arreglar
 
 
                 SqlParameter P_CliDireccion = new SqlParameter();
                 P_CliDireccion.ParameterName = "@CLI_DIRECCION";
-                P_CliDireccion.SqlDbType = SqlDbType = SqlDbType.VarChar;
+                P_CliDireccion.SqlDbType = SqlDbType.VarChar;
                 P_CliDireccion.Size = 80;
                 P_CliDireccion.Value = cliente.Cli_direccion;
                 sqlCmd.Parameters.Add(P_CliDireccion);
@@ -124,8 +125,8 @@ namespace Datos
                 SqlParameter P_CliTelefono = new SqlParameter();
                 P_CliTelefono.ParameterName = "@CLI_TELEFONO";
                 P_CliTelefono.SqlDbType = SqlDbType.Int;
-                P_CliTelefono.Direccion = ParameterDireccion.Output;
-                sqlCmd.Parameters.add(P_CliTelefono);
+                P_CliTelefono.Direction = ParameterDirection.Output;
+                sqlCmd.Parameters.Add(P_CliTelefono);
 
                 SqlParameter p_cliCorreo = new SqlParameter();
                 p_cliCorreo.parameterName = "@CLI_CORREO";
