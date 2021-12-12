@@ -18,7 +18,6 @@ create proc spguardar_Cliente
 @CLI_CORREO varchar(50)
 as
 insert into CLIENTE(
-ID_CLIENTE,
 ID_CIUDAD,
 CLI_RUT,
 CLI_NOMBRE,
