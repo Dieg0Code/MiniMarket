@@ -25,15 +25,18 @@ create proc spguardar_DetalleVenta
 @ID_PRODUCTO int,
 @DET_VEN_CANTIDAD int,
 as
-update DETALLE_VENTA set ID_VENTA = @ID_VENTA,
+update DETALLE_VENTA set 
+ID_VENTA = @ID_VENTA,
 ID_PRODUCTO = @ID_PRODUCTO,
-DET_VEN_CANTIDAD = @DET_VEN_CANTIDAD where ID_DET_VENTA = @ID_DET_VENTA 
+DET_VEN_CANTIDAD = @DET_VEN_CANTIDAD 
+where ID_DET_VENTA = @ID_DET_VENTA 
 go
 
 -- eliminar detalle
 create proc spdeliminar_DetalleVenta
 @ID_DET_VENTA int
 as
-delete from DETALLE_VENTA where ID_DET_VENTA = @ID_DET_VENTA
+delete from DETALLE_VENTA
+where ID_DET_VENTA = @ID_DET_VENTA
 go
 

@@ -26,7 +26,14 @@ CLI_FECHA_NAC,
 CLI_DIRECCION,
 CLI_TELEFONO,
 CLI_CORREO,
-) values (@ID_CLIENTE,@ID_CIUDAD,@CLIENTE)
+) values (@ID_CIUDAD,
+@CLI_RUT,
+@CLI_NOMBRE,
+@CLI_APELLIDOS,
+@CLI_FECHA_NAC,
+@CLI_DIRECCION,
+@CLI_TELEFONO,
+@CLI_CORREO)
 go
 
 --Actualizar Cliente
@@ -41,14 +48,23 @@ create proc spguardar_Cliente
 @CLI_TELEFONO int,
 @CLI_CORREO varchar(50),
 as
-update CLIENTE  set ID_CLIENTE = @ID_CLIENTE,
-ID_CLIENTE = @ID_CLIENTE,
-CLIENTE = @CLIENTE where ID_CLIENTE = @ID_CLIENTE
+update CLIENTE  set
+ID_CIUDAD = @ID_CIUDAD,
+CLI_RUT = @CLI_RUT,
+CLI_NOMBRE = @CLI_NOMBRE,
+CLI_APELLIDOS = @CLI_APELLIDOS,
+CLI_FECHA_NAC = @CLI_FECHA_NAC,
+CLI_DIRECCION = @CLI_DIRECCION,
+CLI_TELEFONO = @CLI_TELEFONO,
+CLI_CORREO = @CLI_CORREO,
+
+where ID_CLIENTE = @ID_CLIENTE
 go
 
 --eliminar Cliente
-create proc spdeliminar_Cliente
+create proc speliminar_Cliente
 @ID_CLIENTE int 
 as
-delete from CLIENTE where ID_CLIENTE = @ID_CLIENTE
+delete from CLIENTE
+where ID_CLIENTE = @ID_CLIENTE
 go
