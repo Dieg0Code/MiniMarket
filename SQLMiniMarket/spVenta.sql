@@ -16,7 +16,7 @@ create proc spguardar_VENTA
 @VEN_NUM_VENTA int,
 @VEN_TOTAL decimal(19,2)
 as
-inser into VENTA (
+insert into VENTA (
 ID_CLIENTE,
 ID_USUARIO,
 ID_TIPO_DOC,
