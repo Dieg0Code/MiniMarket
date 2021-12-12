@@ -61,7 +61,7 @@ CLI_CORREO = @CLI_CORREO,
 where ID_CLIENTE = @ID_CLIENTE
 go
 
---eliminar Cliente
+--Eliminar Cliente
 create proc speliminar_Cliente
 @ID_CLIENTE int 
 as
