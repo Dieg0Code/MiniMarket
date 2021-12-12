@@ -50,12 +50,12 @@ namespace Datos
                 P_IdtipoDocumento.Direction = ParameterDirection.Output;
                 sqlcmd.Parameters.Add(P_IdtipoDocumento);
                 
-                sqlParameter P_tipodocnombre = new Sqlparameter();
+                SqlParameter P_tipodocnombre = new SqlParameter();
                 P_tipodocnombre.ParameterName = "@TIPO_DOC_NOMBRE";
-                P_tipodocnombre.sqlDbType = sqlDbtype.Varchar;
+                P_tipodocnombre.SqlDbType = SqlDbType.VarChar;
                 P_tipodocnombre.Size = 20;
                 P_tipodocnombre.Value = tipoDocumento.Tipo_doc_nombre;
-                sqlcmd.Parameters.add(P_tipodocnombre);
+                sqlcmd.Parameters.Add(P_tipodocnombre);
 
 
                 respuesta = sqlcmd.ExecuteNonQuery() == 1 ?
@@ -93,15 +93,13 @@ namespace Datos
                 P_IdtipoDocumento.Direction = ParameterDirection.Output;
                 sqlcmd.Parameters.Add(P_IdtipoDocumento);
 
-                sqlParameter P_tipodocnombre = new Sqlparameter();
+                SqlParameter P_tipodocnombre = new SqlParameter();
                 P_tipodocnombre.ParameterName = "@TIPO_DOC_NOMBRE";
-                P_tipodocnombre.sqlDbType = sqlDbtype.Varchar;
+                P_tipodocnombre.SqlDbType = SqlDbType.VarChar;
                 P_tipodocnombre.Size = 20;
                 P_tipodocnombre.Value = tipoDocumento.Tipo_doc_nombre;
-                sqlcmd.Parameters.add(P_tipodocnombre);
-
-
-                sqlParameter_P
+                sqlcmd.Parameters.Add(P_tipodocnombre);
+          
 
                 respuesta = sqlcmd.ExecuteNonQuery() == 1 ?
                     "Actualizar con exito!" :
