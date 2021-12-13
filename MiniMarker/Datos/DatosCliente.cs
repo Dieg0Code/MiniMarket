@@ -84,7 +84,6 @@ namespace Datos
                 SqlParameter P_IdCiudad = new SqlParameter();
                 P_IdCiudad.ParameterName = "ID_CIUDAD";
                 P_IdCiudad.SqlDbType = SqlDbType.Int;
-                P_IdCiudad.Direction = ParameterDirection.Output;
                 sqlCmd.Parameters.Add(P_IdCiudad);
 
                 SqlParameter P_CliRut = new SqlParameter();
@@ -179,7 +178,6 @@ namespace Datos
                 SqlParameter P_IdCiudad = new SqlParameter();
                 P_IdCiudad.ParameterName = "ID_CIUDAD";
                 P_IdCiudad.SqlDbType = SqlDbType.Int;
-                P_IdCiudad.Direction = ParameterDirection.Output;
                 sqlCmd.Parameters.Add(P_IdCiudad);
 
                 SqlParameter P_CliRut = new SqlParameter();
